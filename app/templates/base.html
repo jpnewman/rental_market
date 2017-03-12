@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <title>Rental Market {% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rental Market">
+    <meta name="keywords" content="">
+    <meta name="author" content="John Paul Newman">
+    <meta charset="utf-8">
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-theme.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <style>
+      body { padding-top: 60px; }
+
+      .accordian-toggle a:hover {
+        text-decoration: none !important;
+      }
+      .collapsed .icon-collapse-alt {
+        display: none;
+      }
+
+      .collapsed .icon-expand-alt {
+        display: inline !important;
+      }
+
+      .icon-expand-alt {
+        display: none !important;
+      }
+    </style>
+
+    <!-- SUPPORT FOR IE6-8 OF HTML5 ELEMENTS -->
+    <!--[if lt IE 9]>
+          <script src="{{ url_for('static', filename='js/html5shiv.js') }}"></script>
+      <![endif]-->
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='ico/favicon.ico') }}">
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    {% endblock %}
+  </head>
+
+  <body>
+
+    {% block navbar %}
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <a class="navbar-brand" href="/">Rental Market</a>
+        <div class="nav-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/properties">Properties</a></li>
+            <li><a href="/agencies">Agencies</a></li>
+            <li><a href="/agents">Agents</a></li>
+            <li><a href="/viewings">Viewings</a></li>
+          </ul>
+          <ul class="nav navbar-nav pull-right">
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    {% endblock %}
+
+    <div class="container page">
+        {% for message in get_flashed_messages() %}
+          <div class="flashed-message alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{message}}
+            <script>
+              $(".flashed-message").alert();
+            </script>
+          </div>
+        {% endfor %}
+        <div class="content">
+          {% block content %}
+          {% endblock %}
+        </div>
+
+        <hr>
+
+        {% block footer %}
+        <footer class="footer">
+            <p>&copy; John Paul Newman</p>
+        </footer>
+        {% endblock %}
+
+    </div>
+    {% block js_footer %}
+
+    {% endblock %}
+  </body>
+</html>

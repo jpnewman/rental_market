@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %} - Agent{% endblock %}
+{% block content %}
+{% from "forms/macros.html" import render_field %}
+<div class="row">
+  <h1>Agents</h1>
+  {% if agents %}
+  <div class="accordion" id="accordion2">
+    {% for agent in agents %}
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <h4>
+          <a class="accordion-toggle collapsed in" data-toggle="collapse" data-parent="#accordion2" href="#collapse{{agent.id}}"><i class="icon-expand-alt pull-right"></i><i class="icon-collapse-alt pull-right"></i>{{agent.name}}</a>
+        </h4>
+      </div>
+      <div class="accordion-body collapse" id="collapse{{agent.id}}">
+
+
+
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div>
+    <h2>No Agents Registered</h2>
+  <div>
+  {% endif %}
+</div>
+<script type="text/javascript">
+$("a[rel=tooltip]").tooltip();
+$("a[rel=popover]").popover({trigger:'hover'});
+</script>
+<form method="POST" action="." class="form form-horizontal">
+  <!-- Form Name -->
+  <legend>Register Agent</legend>
+  {{ form.csrf_token }}
+  {{ render_field(form.name, class="input-xlarge",placeholder="name") }}
+  {{ render_field(form.phone_number, class="input-xlarge",placeholder="phone_number") }}
+  {{ render_field(form.email, class="input-xlarge",placeholder="email") }}
+  {{ render_field(form.agency, class="input-xlarge",placeholder="agency") }}
+  <div class="control-group">
+    <label class="control-label"></label>
+    <div class="controls">
+      <button type="submit" id="register_agent" class="btn btn-primary">Register</button>
+    </div>
+  </div>
+</form>
+{% endblock %}
