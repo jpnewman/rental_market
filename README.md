@@ -49,18 +49,18 @@ pip install -r requirements_pythonista.txt
 
 **NOTE:** For now, the following should packages be installed via ```pip``` command using [stash](https://github.com/ywangd/stash)
 
-|Package|Version|Description|Note|
+|Package|Description|Note|
 |---|---|---|---|
-|Flask-Scss|0.5|Adds support for scss files to Flask applications|Needs compiled scss, so not used for Pythonista|
-|Flask-SQLAlchemy|2.2|Adds SQLAlchemy support to your Flask application||
-|SQLAlchemy|1.1.6|Database Abstraction Library||
-|requests|2.13.0|Python HTTP for Humans.||
-|WTForm|1.0|WTForm is an extension to the django newforms library.||
-|Flask-WTF|0.14.2|Simple integration of Flask and WTForms.||
-|Flask-DebugToolbar|0.10.1|A toolbar overlay for debugging Flask applications.||
-|Werkzeug|0.9.6|The Swiss Army knife of Python web development||
-|WTForms|2.1|A flexible forms validation and rendering library for python web development.||
-|blinker|1.4|Fast, simple object-to-object and broadcast signaling||
+|Flask-Scss|Adds support for scss files to Flask applications|Needs compiled scss, so not used for Pythonista|
+|Flask-SQLAlchemy|Adds SQLAlchemy support to your Flask application||
+|SQLAlchemy|Database Abstraction Library||
+|requests|Python HTTP for Humans.||
+|WTForm|WTForm is an extension to the django newforms library.||
+|Flask-WTF|Simple integration of Flask and WTForms.||
+|Flask-DebugToolbar|A toolbar overlay for debugging Flask applications.||
+|Werkzeug|The Swiss Army knife of Python web development||
+|WTForms|A flexible forms validation and rendering library for python web development.||
+|blinker|Fast, simple object-to-object and broadcast signaling||
 
 ## Freeze requirements (Desktop Environment)
 
